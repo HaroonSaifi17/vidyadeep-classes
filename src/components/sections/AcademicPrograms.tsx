@@ -36,28 +36,9 @@ function CheckListItem({ children }: { children: ReactNode }) {
   );
 }
 
-const PROGRAM_IMAGES: Record<ProgramKey, { src: string; alt: string; caption: string }> = {
-  foundation: {
-    src: "/images/foundation.webp",
-    alt: "Foundation class students learning together",
-    caption: "Class 6 – 8 Foundation Batch",
-  },
-  boards: {
-    src: "/images/boards.webp",
-    alt: "Class 10 students preparing for board exams",
-    caption: "Class 9 – 10 Board Exam Series",
-  },
-  seniors: {
-    src: "/images/seniors.webp",
-    alt: "Senior secondary student conducting practical experiment",
-    caption: "Class 11 – 12 Science & Commerce Streams",
-  },
-};
-
 export function AcademicPrograms() {
   const [active, setActive] = useState<ProgramKey>("boards");
   const program = PROGRAMS[active];
-  const currentImg = PROGRAM_IMAGES[active];
 
   return (
     <section id="programs" className="scroll-mt-24 bg-blush py-16 sm:py-24">
@@ -102,52 +83,36 @@ export function AcademicPrograms() {
             })}
           </div>
 
-          <div key={active} className="grid animate-fade-up gap-10 lg:grid-cols-3">
-              <div className="lg:col-span-2">
-                <h3 className="font-display text-h3">{program.title}</h3>
-                <p className="mt-3 max-w-lg text-body leading-relaxed text-ink-2">{program.summary}</p>
+          <div key={active} className="grid animate-fade-up gap-10 lg:grid-cols-2">
+            <div>
+              <h3 className="font-display text-h3">{program.title}</h3>
+              <p className="mt-3 max-w-md text-body leading-relaxed text-ink-2">{program.summary}</p>
 
-                {program.subjects ? (
-                  <div className="mt-7">
-                    <FieldLabel>Subjects covered</FieldLabel>
-                    <ChipList items={program.subjects} />
-                  </div>
-                ) : null}
-
-                {program.streams?.map((stream) => (
-                  <div key={stream.name} className="mt-7">
-                    <FieldLabel>{stream.name}</FieldLabel>
-                    <ChipList items={stream.subjects} />
-                  </div>
-                ))}
-
-                <div className="mt-8">
-                  <FieldLabel>What your child gets</FieldLabel>
-                  <ul className="mt-3">
-                    {program.focus.map((item) => (
-                      <CheckListItem key={item}>{item}</CheckListItem>
-                    ))}
-                    <CheckListItem>Complete study material &amp; question banks</CheckListItem>
-                  </ul>
+              {program.subjects ? (
+                <div className="mt-7">
+                  <FieldLabel>Subjects covered</FieldLabel>
+                  <ChipList items={program.subjects} />
                 </div>
-              </div>
+              ) : null}
 
-              <div className="flex flex-col justify-start">
-                <div className="relative overflow-hidden rounded-xl border border-line bg-white p-2.5 shadow-photo transition-transform duration-500 hover:-translate-y-1">
-                  <img
-                    src={currentImg.src}
-                    alt={currentImg.alt}
-                    className="h-64 w-full rounded-lg object-cover sm:h-72"
-                    loading="lazy"
-                  />
-                  <div className="mt-3 px-1 text-center">
-                    <span className="inline-block rounded-full bg-saffron-soft px-3 py-1 text-fine font-bold text-saffron-ink">
-                      {currentImg.caption}
-                    </span>
-                  </div>
+              {program.streams?.map((stream) => (
+                <div key={stream.name} className="mt-7">
+                  <FieldLabel>{stream.name}</FieldLabel>
+                  <ChipList items={stream.subjects} />
                 </div>
-              </div>
+              ))}
             </div>
+
+            <div>
+              <FieldLabel>What your child gets</FieldLabel>
+              <ul className="mt-3">
+                {program.focus.map((item) => (
+                  <CheckListItem key={item}>{item}</CheckListItem>
+                ))}
+                <CheckListItem>Complete study material &amp; question banks</CheckListItem>
+              </ul>
+            </div>
+          </div>
         </Reveal>
       </Container>
     </section>

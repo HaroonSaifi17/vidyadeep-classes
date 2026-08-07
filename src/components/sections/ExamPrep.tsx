@@ -26,60 +26,37 @@ export function ExamPrep() {
 
         <Reveal delay={0.05}>
           <div>
-            {EXAM_TRACKS.map((track, index) => {
-              const TRACK_IMAGES: Record<string, { src: string; alt: string }> = {
-                NEET: { src: "/images/neet.webp", alt: "NEET Medical preparation student studying biology notes" },
-                "JEE Main + Advanced": { src: "/images/jee.webp", alt: "JEE Engineering preparation student solving physics formulas" },
-                CUET: { src: "/images/cuet.webp", alt: "CUET University aspirants discussing prep strategy" },
-                NDA: { src: "/images/nda.webp", alt: "NDA defence exam aspirant preparing with discipline" },
-              };
-              const trackImg = TRACK_IMAGES[track.name];
-
-              return (
-                <Accordion
-                  key={track.name}
-                  heading={
-                    <span className="flex w-full items-center gap-5">
-                      <span className="hidden font-display text-sm italic text-ink-2 sm:block">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <span className="font-display text-h3">{track.name}</span>
-                      <span className="rounded-full bg-saffron-soft px-3 py-1 text-label font-bold uppercase tracking-label text-saffron-ink">
-                        {track.tag}
-                      </span>
+            {EXAM_TRACKS.map((track, index) => (
+              <Accordion
+                key={track.name}
+                heading={
+                  <span className="flex w-full items-center gap-5">
+                    <span className="hidden font-display text-sm italic text-ink-2 sm:block">
+                      {String(index + 1).padStart(2, "0")}
                     </span>
-                  }
-                >
-                  <div className="grid gap-6 px-2 pb-9 sm:pl-14 lg:grid-cols-3">
-                    <div className="lg:col-span-2">
-                      <p className="text-body leading-relaxed text-ink-2">{track.line}</p>
-                      <ul className="mt-4 grid gap-x-8 gap-y-1.5 sm:grid-cols-2">
-                        {track.points.map((point) => (
-                          <li key={point} className="flex items-start gap-2.5 py-1.5 text-body">
-                            <CheckIcon className="mt-1 h-3.5 w-3.5 shrink-0 text-sage-ink" />
-                            <span>{point}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <p className="mt-6 text-fine uppercase tracking-label text-ink-2">
-                        Classroom mode · Test series &amp; study material included
-                      </p>
-                    </div>
-
-                    {trackImg ? (
-                      <div className="overflow-hidden rounded-xl border border-line bg-paper-2 shadow-sm">
-                        <img
-                          src={trackImg.src}
-                          alt={trackImg.alt}
-                          className="h-36 w-full object-cover transition-transform duration-500 hover:scale-105"
-                          loading="lazy"
-                        />
-                      </div>
-                    ) : null}
-                  </div>
-                </Accordion>
-              );
-            })}
+                    <span className="font-display text-h3">{track.name}</span>
+                    <span className="rounded-full bg-saffron-soft px-3 py-1 text-label font-bold uppercase tracking-label text-saffron-ink">
+                      {track.tag}
+                    </span>
+                  </span>
+                }
+              >
+                <div className="px-2 pb-9 sm:pl-14">
+                  <p className="max-w-2xl text-body leading-relaxed text-ink-2">{track.line}</p>
+                  <ul className="mt-4 grid max-w-2xl gap-x-8 gap-y-1.5 sm:grid-cols-2">
+                    {track.points.map((point) => (
+                      <li key={point} className="flex items-start gap-2.5 py-1.5 text-body">
+                        <CheckIcon className="mt-1 h-3.5 w-3.5 shrink-0 text-sage-ink" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-6 text-fine uppercase tracking-label text-ink-2">
+                    Classroom mode · Test series &amp; study material included
+                  </p>
+                </div>
+              </Accordion>
+            ))}
           </div>
         </Reveal>
       </Container>

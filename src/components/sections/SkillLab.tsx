@@ -9,19 +9,18 @@ import { ButtonLink } from "../ui/Button";
 function LabPhoto() {
   return (
     <div className="relative mt-8 w-full sm:w-5/6">
-      <div className="relative overflow-hidden rounded-lg border border-line bg-white p-2 shadow-photo transition-transform duration-500 hover:scale-[1.02]">
-        <span aria-hidden className="absolute -top-2 right-6 z-10 h-6 w-16 rotate-3 bg-tape/80 shadow-sm" />
+      <div className="relative overflow-hidden rounded-xl border border-line bg-paper-2 shadow-md transition-transform duration-500 hover:scale-[1.02]">
         <img
           src="/images/computer_lab.webp"
           alt="Students at individual workstations in Vidyadeep computer lab"
           loading="lazy"
-          className="h-56 w-full rounded object-cover sm:h-64"
+          className="block h-56 w-full object-cover sm:h-64"
         />
-        <div className="mt-2.5 flex items-center justify-between gap-2 px-2">
-          <span className="truncate min-w-0 text-fine font-bold uppercase tracking-label text-ink-2">
+        <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2">
+          <span className="truncate min-w-0 rounded-lg bg-ink/90 px-3 py-1.5 text-fine font-bold uppercase tracking-label text-cream shadow-sm backdrop-blur-md">
             Real Campus Computer Lab
           </span>
-          <span className="shrink-0 whitespace-nowrap rounded-full bg-saffron-soft px-3 py-1 text-fine font-bold text-saffron-ink">
+          <span className="shrink-0 whitespace-nowrap rounded-lg bg-white/90 px-3 py-1.5 text-fine font-bold text-ink shadow-md backdrop-blur-md">
             1:1 Workstations
           </span>
         </div>
