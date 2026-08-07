@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* Typography */
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+
+  /* Brand palette — paper neutrals with a saffron accent */
+  --color-paper: #faf6ee;
+  --color-paper-2: #fffdf6;
+  --color-ink: #26231c;
+  --color-ink-2: #6b6255;
+  --color-ink-soft: #3b3527;
+  --color-line: #e7dfcc;
+  --color-line-soft: #e0d5be;
+  --color-cream: #f5efdf;
+  --color-cream-muted: #b7ae97;
+  --color-band-muted: #c9c1ac;
+  --color-gold: #f2c879;
+  --color-saffron: #d98324;
+  --color-saffron-ink: #8a5312;
+  --color-saffron-soft: #fbe3cf;
+  --color-note-ink: #6b4a17;
+  --color-tape: #e2b25e;
+  --color-hover: #fff9ec;
+  --color-sage: #edf2e2;
+  --color-sage-ink: #5c7248;
+  --color-blush: #faede0;
+  --color-sky: #e9f0f3;
+  --color-live: #5c9a52;
+
+  /* Type scale */
+  --text-label: 10.5px;
+  --text-kicker: 11.5px;
+  --text-fine: 12.5px;
+  --text-body: 15px;
+  --text-body--line-height: 1.55;
+  --text-lead: 17px;
+  --text-lead--line-height: 1.55;
+  --text-h1: clamp(44px, 6.2vw, 78px);
+  --text-h1--line-height: 1.02;
+  --text-h1--letter-spacing: -0.02em;
+  --text-h2: clamp(26px, 3.8vw, 46px);
+  --text-h2--line-height: 1.07;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h3: clamp(20px, 2.4vw, 27px);
+  --text-h3--line-height: 1.2;
+  --text-h3--letter-spacing: -0.01em;
+  --text-quote: clamp(24px, 3.2vw, 38px);
+  --text-quote--line-height: 1.25;
+  --text-stat: 56px;
+  --text-stat--line-height: 1;
+
+  /* Letter spacing */
+  --tracking-eyebrow: 0.16em;
+  --tracking-kicker: 0.2em;
+  --tracking-label: 0.14em;
+  --tracking-loose: 0.22em;
+
+  /* Grid templates */
+  --grid-template-columns-hero: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  --grid-template-columns-method: minmax(0, 390px) minmax(0, 1fr);
+  --grid-template-columns-lab: minmax(0, 380px) minmax(0, 1fr);
+  --grid-template-columns-faq: minmax(0, 340px) minmax(0, 1fr);
+  --grid-template-columns-course: 3rem minmax(0, 1fr) auto 2rem;
+
+  /* Sizes */
+  --height-hero: 430px;
+  --height-hero-sm: 480px;
+  --height-hero-lg: 560px;
+
+  /* Shadows */
+  --shadow-photo: 0 24px 48px -20px rgb(38 35 28 / 0.35);
+  --shadow-card: 0 18px 34px -14px rgb(38 35 28 / 0.3);
+  --shadow-form: 0 24px 48px -28px rgb(38 35 28 / 0.35);
+  --shadow-tape: 0 2px 4px rgb(0 0 0 / 0.06);
+
+  /* Animations */
+  --animate-pulse-ring: pulse-ring 2.2s ease-out infinite;
+  --animate-pulse-dot: pulse-dot 2s ease-in-out infinite;
+  --animate-rise: rise 0.95s cubic-bezier(0.19, 0.8, 0.22, 1) both;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-spin-slow: spin-slow 24s linear infinite;
+  --animate-ticker: ticker 34s linear infinite;
+  --animate-fade-up: fade-up 0.45s ease both;
+  --animate-pop: pop 0.5s cubic-bezier(0.19, 0.8, 0.22, 1) both;
+
+  @keyframes pulse-ring {
+    0% {
+      transform: scale(0.5);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+  }
+  @keyframes pulse-dot {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.35;
+    }
+  }
+  @keyframes rise {
+    from {
+      transform: translateY(120%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-9px);
+    }
+  }
+  @keyframes spin-slow {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes ticker {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+  }
+  @keyframes pop {
+    from {
+      transform: scale(0.4);
+      opacity: 0;
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-saffron-soft);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-saffron);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+  }
+}
+
+/* Paper-grain texture overlay */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0.045;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Pause the ticker marquee while hovering it */
+.ticker-wrap:hover .animate-ticker {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001s !important;
+  }
+}
