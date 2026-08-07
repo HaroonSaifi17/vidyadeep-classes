@@ -8,7 +8,9 @@ import { SectionHeader } from "../ui/SectionHeader";
 
 function FieldLabel({ children }: { children: ReactNode }) {
   return (
-    <p className="mb-3 text-fine font-bold uppercase tracking-label text-ink-2">{children}</p>
+    <p className="mb-3 text-fine font-bold uppercase tracking-label text-ink-2">
+      {children}
+    </p>
   );
 }
 
@@ -57,7 +59,11 @@ export function AcademicPrograms() {
         />
 
         <Reveal>
-          <div role="tablist" aria-label="Class groups" className="mb-11 flex gap-1.5 overflow-x-auto border-b border-line pb-0.5 no-scrollbar">
+          <div
+            role="tablist"
+            aria-label="Class groups"
+            className="mb-11 flex gap-1.5 overflow-x-auto border-b border-line pb-0.5 no-scrollbar"
+          >
             {PROGRAM_KEYS.map((key) => {
               const selected = active === key;
               return (
@@ -83,10 +89,15 @@ export function AcademicPrograms() {
             })}
           </div>
 
-          <div key={active} className="grid animate-fade-up gap-10 lg:grid-cols-2">
+          <div
+            key={active}
+            className="grid animate-fade-up gap-10 lg:grid-cols-2"
+          >
             <div>
               <h3 className="font-display text-h3">{program.title}</h3>
-              <p className="mt-3 max-w-md text-body leading-relaxed text-ink-2">{program.summary}</p>
+              <p className="mt-3 max-w-md text-body leading-relaxed text-ink-2">
+                {program.summary}
+              </p>
 
               {program.subjects ? (
                 <div className="mt-7">
@@ -109,7 +120,9 @@ export function AcademicPrograms() {
                 {program.focus.map((item) => (
                   <CheckListItem key={item}>{item}</CheckListItem>
                 ))}
-                <CheckListItem>Complete study material &amp; question banks</CheckListItem>
+                <CheckListItem>
+                  Complete study material &amp; question banks
+                </CheckListItem>
               </ul>
             </div>
           </div>

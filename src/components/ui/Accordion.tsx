@@ -8,7 +8,12 @@ interface AccordionProps {
   className?: string;
 }
 
-export function Accordion({ heading, children, defaultOpen = false, className = "" }: AccordionProps) {
+export function Accordion({
+  heading,
+  children,
+  defaultOpen = false,
+  className = "",
+}: AccordionProps) {
   const [open, setOpen] = useState(defaultOpen);
 
   return (

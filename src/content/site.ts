@@ -64,22 +64,26 @@ export const METHOD_STEPS = [
   {
     number: "01",
     title: "Concept class",
-    description: "Interactive sessions built on understanding — never rote memorisation.",
+    description:
+      "Interactive sessions built on understanding — never rote memorisation.",
   },
   {
     number: "02",
     title: "Daily practice",
-    description: "Ten questions per subject, every day, solved together in class.",
+    description:
+      "Ten questions per subject, every day, solved together in class.",
   },
   {
     number: "03",
     title: "Weekly test",
-    description: "Chapter-wise tests, marked and analysed — gaps are caught early.",
+    description:
+      "Chapter-wise tests, marked and analysed — gaps are caught early.",
   },
   {
     number: "04",
     title: "Parent update",
-    description: "Marks, attendance and next steps — shared with you, honestly, every month.",
+    description:
+      "Marks, attendance and next steps — shared with you, honestly, every month.",
   },
 ];
 
@@ -205,13 +209,41 @@ export const TRACK_RECORD_STATS: Stat[] = [
 ];
 
 export const COURSES: Course[] = [
-  { number: "01", name: "Basic Computer", details: "Fundamentals · MS Office · Internet & email" },
-  { number: "02", name: "DTP & Graphic Design", details: "Photoshop · CorelDRAW · Illustrator" },
-  { number: "03", name: "Tally Prime with GST", details: "Vouchers · GST · Payroll · Reports" },
-  { number: "04", name: "IT & Networking", details: "Operating systems · Hardware · Troubleshooting" },
-  { number: "05", name: "Video Editing", details: "Premiere Pro · CapCut · Reels & YouTube" },
-  { number: "06", name: "Digital Marketing", details: "SEO · Google & Meta Ads · Lead generation" },
-  { number: "07", name: "E-Commerce", details: "Amazon · Flipkart · Meesho seller setup" },
+  {
+    number: "01",
+    name: "Basic Computer",
+    details: "Fundamentals · MS Office · Internet & email",
+  },
+  {
+    number: "02",
+    name: "DTP & Graphic Design",
+    details: "Photoshop · CorelDRAW · Illustrator",
+  },
+  {
+    number: "03",
+    name: "Tally Prime with GST",
+    details: "Vouchers · GST · Payroll · Reports",
+  },
+  {
+    number: "04",
+    name: "IT & Networking",
+    details: "Operating systems · Hardware · Troubleshooting",
+  },
+  {
+    number: "05",
+    name: "Video Editing",
+    details: "Premiere Pro · CapCut · Reels & YouTube",
+  },
+  {
+    number: "06",
+    name: "Digital Marketing",
+    details: "SEO · Google & Meta Ads · Lead generation",
+  },
+  {
+    number: "07",
+    name: "E-Commerce",
+    details: "Amazon · Flipkart · Meesho seller setup",
+  },
 ];
 
 export const FACILITIES = [
@@ -248,11 +280,13 @@ export const FAQS: Faq[] = [
   },
   {
     question: "Is study material included?",
-    answer: "Notes, practice assignments and question banks are provided for every enrolled course.",
+    answer:
+      "Notes, practice assignments and question banks are provided for every enrolled course.",
   },
   {
     question: "What is the batch size?",
-    answer: "Batches are capped at 24 students so that every learner gets genuine, personal attention.",
+    answer:
+      "Batches are capped at 24 students so that every learner gets genuine, personal attention.",
   },
 ];
 

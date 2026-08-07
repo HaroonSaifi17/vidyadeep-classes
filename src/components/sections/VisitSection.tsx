@@ -1,6 +1,12 @@
 import { useState, type FormEvent, type ReactNode } from "react";
 import { CONTACT, COURSE_OPTIONS } from "../../content/site";
-import { ArrowIcon, CheckIcon, ClockIcon, PhoneIcon, PinIcon } from "../ui/icons";
+import {
+  ArrowIcon,
+  CheckIcon,
+  ClockIcon,
+  PhoneIcon,
+  PinIcon,
+} from "../ui/icons";
 import { Button } from "../ui/Button";
 import { Container } from "../ui/Container";
 import { Reveal } from "../ui/Reveal";
@@ -29,10 +35,21 @@ function DetailRow({ title, value, icon: Icon }: (typeof DETAILS)[number]) {
   );
 }
 
-function Field({ id, label, children }: { id: string; label: string; children: ReactNode }) {
+function Field({
+  id,
+  label,
+  children,
+}: {
+  id: string;
+  label: string;
+  children: ReactNode;
+}) {
   return (
     <div className="space-y-1.5">
-      <label htmlFor={id} className="block text-fine font-bold uppercase tracking-label text-ink-2">
+      <label
+        htmlFor={id}
+        className="block text-fine font-bold uppercase tracking-label text-ink-2"
+      >
         {label}
       </label>
       {children}
@@ -42,7 +59,10 @@ function Field({ id, label, children }: { id: string; label: string; children: R
 
 function SuccessPanel({ name, course }: { name: string; course: string }) {
   return (
-    <div className="rounded-xl border border-line bg-white p-8 text-center shadow-form" role="status">
+    <div
+      className="rounded-xl border border-line bg-white p-8 text-center shadow-form"
+      role="status"
+    >
       <div className="mx-auto mb-5 grid h-14 w-14 animate-pop place-items-center rounded-full bg-sage text-sage-ink">
         <CheckIcon size={22} />
       </div>
@@ -131,7 +151,9 @@ export function VisitSection() {
               className="rounded-xl border border-line bg-white p-7 shadow-form sm:p-9"
             >
               <h3 className="font-display text-h3">Request a call back</h3>
-              <p className="mt-1 text-body text-ink-2">We reply within one working day.</p>
+              <p className="mt-1 text-body text-ink-2">
+                We reply within one working day.
+              </p>
 
               <div className="mt-7 space-y-5">
                 <Field id="visit-name" label="Student name">
@@ -142,7 +164,9 @@ export function VisitSection() {
                     maxLength={70}
                     placeholder="e.g. Aarav Sharma"
                     value={form.name}
-                    onChange={(event) => setForm({ ...form, name: event.target.value })}
+                    onChange={(event) =>
+                      setForm({ ...form, name: event.target.value })
+                    }
                     className={inputClass}
                   />
                 </Field>
@@ -156,7 +180,9 @@ export function VisitSection() {
                     maxLength={15}
                     placeholder="+91 98765 43210"
                     value={form.phone}
-                    onChange={(event) => setForm({ ...form, phone: event.target.value })}
+                    onChange={(event) =>
+                      setForm({ ...form, phone: event.target.value })
+                    }
                     className={inputClass}
                   />
                 </Field>
@@ -165,7 +191,9 @@ export function VisitSection() {
                   <select
                     id="visit-course"
                     value={form.course}
-                    onChange={(event) => setForm({ ...form, course: event.target.value })}
+                    onChange={(event) =>
+                      setForm({ ...form, course: event.target.value })
+                    }
                     className={inputClass}
                   >
                     {COURSE_OPTIONS.map((option) => (
@@ -174,7 +202,11 @@ export function VisitSection() {
                   </select>
                 </Field>
 
-                <Button type="submit" disabled={isSubmitting} className="w-full disabled:opacity-60">
+                <Button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="w-full disabled:opacity-60"
+                >
                   {isSubmitting ? "Submitting..." : "Request a call back"}
                   <ArrowIcon className="transition-transform duration-300 group-hover:translate-x-1" />
                 </Button>

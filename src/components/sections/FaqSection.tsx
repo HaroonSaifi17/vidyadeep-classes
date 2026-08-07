@@ -28,9 +28,15 @@ export function FaqSection() {
             <Reveal key={faq.question} delay={index * 0.04}>
               <Accordion
                 defaultOpen={index === 0}
-                heading={<span className="text-body font-semibold text-ink">{faq.question}</span>}
+                heading={
+                  <span className="text-body font-semibold text-ink">
+                    {faq.question}
+                  </span>
+                }
               >
-                <p className="max-w-xl pb-7 text-body leading-relaxed text-ink-2">{faq.answer}</p>
+                <p className="max-w-xl pb-7 text-body leading-relaxed text-ink-2">
+                  {faq.answer}
+                </p>
               </Accordion>
             </Reveal>
           ))}

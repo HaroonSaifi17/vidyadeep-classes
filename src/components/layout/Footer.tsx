@@ -33,7 +33,9 @@ const FOOTER_COLUMNS = [
 function FooterColumn({ title, links }: (typeof FOOTER_COLUMNS)[number]) {
   return (
     <div>
-      <p className="mb-4 text-label font-bold uppercase tracking-label text-ink-2">{title}</p>
+      <p className="mb-4 text-label font-bold uppercase tracking-label text-ink-2">
+        {title}
+      </p>
       <ul className="space-y-1">
         {links.map((link) => (
           <li key={link.label}>
@@ -66,7 +68,9 @@ export function Footer() {
           ))}
         </div>
         <div className="flex flex-wrap items-center justify-between gap-3 border-t border-line pt-6 text-fine text-ink-2">
-          <p>© {new Date().getFullYear()} Vidyadeep Classes. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} Vidyadeep Classes. All rights reserved.
+          </p>
           <p>Small batches · Honest reporting · Concept-first teaching</p>
         </div>
       </Container>

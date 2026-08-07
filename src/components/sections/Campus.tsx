@@ -18,28 +18,32 @@ const GALLERY: CampusPhoto[] = [
     src: "/images/smart_classroom.webp",
     alt: "Interactive smart board session in progress at Vidyadeep Classes",
     caption: "Smart Classroom",
-    detail: "High-definition smart screen for interactive visual teaching & doubt clearing",
+    detail:
+      "High-definition smart screen for interactive visual teaching & doubt clearing",
     className: "sm:col-span-2 lg:col-span-4 h-72 sm:h-80 lg:h-96",
   },
   {
     src: "/images/library.webp",
     alt: "Quiet library study space for deep concentration",
     caption: "Study Corner & Library",
-    detail: "Quiet reference library equipped with books, question banks and study material",
+    detail:
+      "Quiet reference library equipped with books, question banks and study material",
     className: "sm:col-span-2 lg:col-span-2 h-72 sm:h-80 lg:h-96",
   },
   {
     src: "/images/computer_lab.webp",
     alt: "Students working at desktop computers in Vidyadeep Lab",
     caption: "Computer Training Lab",
-    detail: "Dedicated workstations for IT, Tally, Video Editing & Digital Marketing practice",
+    detail:
+      "Dedicated workstations for IT, Tally, Video Editing & Digital Marketing practice",
     className: "sm:col-span-2 lg:col-span-3 h-64 sm:h-72 lg:h-80",
   },
   {
     src: "/images/classroom_hero.webp",
     alt: "Full interactive classroom session at Vidyadeep Classes",
     caption: "Main Academic Classroom",
-    detail: "Air-conditioned classrooms capped at 24 students for genuine 1-on-1 interaction",
+    detail:
+      "Air-conditioned classrooms capped at 24 students for genuine 1-on-1 interaction",
     className: "sm:col-span-2 lg:col-span-3 h-64 sm:h-72 lg:h-80",
   },
 ];
@@ -81,7 +85,10 @@ function PhotoTile({
           tabIndex={-1}
           className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg bg-white/90 px-3 py-1.5 text-fine font-bold text-ink shadow-md backdrop-blur-md transition-all duration-300 group-hover:bg-white group-hover:shadow-lg group-hover:scale-105"
         >
-          <MagnifyIcon size={14} className="shrink-0 transition-transform duration-300 group-hover:scale-110" />
+          <MagnifyIcon
+            size={14}
+            className="shrink-0 transition-transform duration-300 group-hover:scale-110"
+          />
           <span>View Photo</span>
         </button>
       </figcaption>
@@ -123,10 +130,15 @@ export function Campus() {
         <Reveal delay={0.05}>
           <div className="mt-10 grid gap-8 lg:grid-cols-3">
             <div className="lg:col-span-2">
-              <h4 className="font-display text-h3 mb-4">Complete Campus Amenities</h4>
+              <h4 className="font-display text-h3 mb-4">
+                Complete Campus Amenities
+              </h4>
               <ul className="grid gap-x-10 gap-y-3.5 sm:grid-cols-2">
                 {FACILITIES.map((facility) => (
-                  <li key={facility} className="flex items-start gap-3 text-body">
+                  <li
+                    key={facility}
+                    className="flex items-start gap-3 text-body"
+                  >
                     <CheckIcon className="mt-1 h-3.5 w-3.5 shrink-0 text-sage-ink" />
                     <span>{facility}</span>
                   </li>
@@ -135,10 +147,12 @@ export function Campus() {
             </div>
 
             <div className="flex flex-col justify-center rounded-xl border border-line bg-paper-2 p-7 shadow-card">
-              <h4 className="font-display text-h3">Safety &amp; transparency</h4>
+              <h4 className="font-display text-h3">
+                Safety &amp; transparency
+              </h4>
               <p className="mt-2 text-body leading-relaxed text-ink-2">
-                CCTV-monitored campus with digital attendance, so parents always know their child
-                is safely in class.
+                CCTV-monitored campus with digital attendance, so parents always
+                know their child is safely in class.
               </p>
               <div className="mt-5 flex items-center gap-2 text-fine font-bold text-sage-ink">
                 <FlameIcon size={16} />
@@ -176,7 +190,12 @@ export function Campus() {
               className="max-h-[75vh] w-full rounded-xl object-contain bg-ink"
             />
             <div className="p-4 text-center">
-              <h3 id="lightbox-photo-title" className="font-display text-h3 text-ink">{activePhoto.caption}</h3>
+              <h3
+                id="lightbox-photo-title"
+                className="font-display text-h3 text-ink"
+              >
+                {activePhoto.caption}
+              </h3>
               <p className="mt-1 text-body text-ink-2">{activePhoto.detail}</p>
             </div>
           </div>

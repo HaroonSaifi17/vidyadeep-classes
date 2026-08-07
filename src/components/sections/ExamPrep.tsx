@@ -42,10 +42,15 @@ export function ExamPrep() {
                 }
               >
                 <div className="px-2 pb-9 sm:pl-14">
-                  <p className="max-w-2xl text-body leading-relaxed text-ink-2">{track.line}</p>
+                  <p className="max-w-2xl text-body leading-relaxed text-ink-2">
+                    {track.line}
+                  </p>
                   <ul className="mt-4 grid max-w-2xl gap-x-8 gap-y-1.5 sm:grid-cols-2">
                     {track.points.map((point) => (
-                      <li key={point} className="flex items-start gap-2.5 py-1.5 text-body">
+                      <li
+                        key={point}
+                        className="flex items-start gap-2.5 py-1.5 text-body"
+                      >
                         <CheckIcon className="mt-1 h-3.5 w-3.5 shrink-0 text-sage-ink" />
                         <span>{point}</span>
                       </li>

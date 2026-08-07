@@ -18,7 +18,8 @@ export function Method() {
               kicker="Our teaching method"
               title={
                 <>
-                  Four rhythms,<br />
+                  Four rhythms,
+                  <br />
                   every single <Accent>week.</Accent>
                 </>
               }
@@ -29,8 +30,8 @@ export function Method() {
               <span className="mb-1.5 block text-kicker font-bold uppercase tracking-kicker text-saffron-ink">
                 Weekly Support Loop
               </span>
-              Plus — Sunday doubt-clearing hour, monthly mock exams and one-on-one mentoring for
-              every student.
+              Plus — Sunday doubt-clearing hour, monthly mock exams and
+              one-on-one mentoring for every student.
             </div>
           </Reveal>
         </div>
@@ -43,7 +44,9 @@ export function Method() {
                   {step.number} —
                 </span>
                 <div>
-                  <h3 className="text-lg font-semibold tracking-tight">{step.title}</h3>
+                  <h3 className="text-lg font-semibold tracking-tight">
+                    {step.title}
+                  </h3>
                   <p className="mt-1.5 max-w-lg text-body leading-relaxed text-ink-2">
                     {step.description}
                   </p>

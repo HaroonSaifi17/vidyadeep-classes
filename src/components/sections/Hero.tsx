@@ -30,9 +30,9 @@ function HeroCopy() {
       </h1>
 
       <p className="mt-6 max-w-lg text-lead leading-relaxed text-ink-2">
-        Vidyadeep Classes brings Classes 6–12 coaching, NEET · JEE · CUET · NDA preparation and
-        career-grade computer courses under one roof — in small batches, with weekly tests and
-        honest parent updates.
+        Vidyadeep Classes brings Classes 6–12 coaching, NEET · JEE · CUET · NDA
+        preparation and career-grade computer courses under one roof — in small
+        batches, with weekly tests and honest parent updates.
       </p>
 
       <div className="mt-8 flex flex-wrap items-center gap-7">
@@ -47,7 +47,10 @@ function HeroCopy() {
 
       <dl className="mt-12 grid grid-cols-2 gap-y-6 border-t border-line pt-6 sm:grid-cols-3">
         {HERO_META.map((item) => (
-          <div key={item.label} className="border-r border-line pr-7 last:border-none">
+          <div
+            key={item.label}
+            className="border-r border-line pr-7 last:border-none"
+          >
             <dt className="font-display text-xl">{item.value}</dt>
             <dd className="mt-1 text-sm text-ink-2">{item.label}</dd>
           </div>
@@ -60,9 +63,16 @@ function HeroCopy() {
 function RotatingBadge() {
   return (
     <div className="absolute -top-7 right-0 z-30 h-32 w-32">
-      <svg className="h-full w-full animate-spin-slow" viewBox="0 0 126 126" aria-hidden="true">
+      <svg
+        className="h-full w-full animate-spin-slow"
+        viewBox="0 0 126 126"
+        aria-hidden="true"
+      >
         <defs>
-          <path id="vd-circ" d="M63,63 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0" />
+          <path
+            id="vd-circ"
+            d="M63,63 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"
+          />
         </defs>
         <text
           style={{
@@ -73,7 +83,9 @@ function RotatingBadge() {
             fontFamily: "'Instrument Sans', sans-serif",
           }}
         >
-          <textPath href="#vd-circ">VIDYADEEP CLASSES · QUALITY EDUCATION · </textPath>
+          <textPath href="#vd-circ">
+            VIDYADEEP CLASSES · QUALITY EDUCATION ·{" "}
+          </textPath>
         </text>
       </svg>
       <span className="absolute inset-0 grid place-items-center">
@@ -101,9 +113,19 @@ function Polaroid({
   className: string;
 }) {
   return (
-    <figure className={`absolute rounded-xl bg-white p-3 pb-8 shadow-photo ${className}`}>
-      <span aria-hidden className={`absolute -top-2 h-6 w-16 bg-tape/80 shadow-sm ${tapeClassName}`} />
-      <img src={src} alt={alt} loading={eager ? "eager" : "lazy"} className="block w-full rounded-lg" />
+    <figure
+      className={`absolute rounded-xl bg-white p-3 pb-8 shadow-photo ${className}`}
+    >
+      <span
+        aria-hidden
+        className={`absolute -top-2 h-6 w-16 bg-tape/80 shadow-sm ${tapeClassName}`}
+      />
+      <img
+        src={src}
+        alt={alt}
+        loading={eager ? "eager" : "lazy"}
+        className="block w-full rounded-lg"
+      />
       <figcaption className="absolute inset-x-0 bottom-2.5 px-3 text-center font-display text-fine italic text-ink-2">
         {caption}
       </figcaption>
@@ -119,7 +141,10 @@ function FloatCard() {
     >
       <div className="mb-2 flex items-center justify-between text-kicker uppercase tracking-kicker text-ink-2">
         <span className="font-bold">Weekly test</span>
-        <span aria-hidden className="h-2 w-2 animate-pulse-dot rounded-full bg-live" />
+        <span
+          aria-hidden
+          className="h-2 w-2 animate-pulse-dot rounded-full bg-live"
+        />
       </div>
       <p className="font-display text-2xl">Maths · 82%</p>
       <p className="mb-3 text-fine text-ink-2">batch average · week 6</p>

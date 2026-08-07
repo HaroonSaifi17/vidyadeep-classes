@@ -19,8 +19,9 @@ export function PromiseBanner() {
 
             <blockquote className="max-w-4xl text-center md:text-left font-display font-normal italic text-quote">
               <span className="mr-2 text-saffron">“</span>
-              Quality teaching, a disciplined routine, regular tests and honest reporting — that is
-              our promise to every family that trusts us with their child.
+              Quality teaching, a disciplined routine, regular tests and honest
+              reporting — that is our promise to every family that trusts us
+              with their child.
               <span className="ml-2 text-saffron">”</span>
               <cite className="mt-4 block font-sans text-sm font-bold not-italic uppercase tracking-label text-saffron-ink">
                 — Faculty Mentors, Vidyadeep Classes

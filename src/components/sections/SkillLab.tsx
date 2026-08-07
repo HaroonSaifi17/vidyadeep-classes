@@ -94,7 +94,8 @@ export function SkillLab() {
             </Reveal>
           ))}
           <p className="mt-6 text-fine text-ink-2">
-            * Tap any course to view syllabus details and book a free demo class.
+            * Tap any course to view syllabus details and book a free demo
+            class.
           </p>
         </div>
       </Container>
@@ -117,7 +118,12 @@ export function SkillLab() {
                 <span className="text-label uppercase tracking-label font-bold text-saffron">
                   Course #{selectedCourse.number}
                 </span>
-                <h3 id="course-modal-title" className="font-display text-h3 mt-1">{selectedCourse.name}</h3>
+                <h3
+                  id="course-modal-title"
+                  className="font-display text-h3 mt-1"
+                >
+                  {selectedCourse.name}
+                </h3>
               </div>
               <button
                 type="button"
@@ -144,17 +150,16 @@ export function SkillLab() {
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckIcon className="text-sage-ink h-4 w-4 shrink-0" />
-                  <span>Flexible batch timings (Morning / Afternoon / Evening)</span>
+                  <span>
+                    Flexible batch timings (Morning / Afternoon / Evening)
+                  </span>
                 </div>
               </div>
             </div>
 
             <div className="mt-7 flex flex-wrap items-center justify-between gap-4 border-t border-line pt-5">
               <p className="text-fine text-ink-2">Free demo class available</p>
-              <ButtonLink
-                href="#visit"
-                onClick={() => setSelectedCourse(null)}
-              >
+              <ButtonLink href="#visit" onClick={() => setSelectedCourse(null)}>
                 Book Free Demo Class
                 <ArrowIcon />
               </ButtonLink>

@@ -25,9 +25,15 @@ export function SectionHeader({
 
   if (layout === "row") {
     return (
-      <div className={`mb-12 flex flex-wrap items-end justify-between gap-x-4 gap-y-6 ${className}`}>
+      <div
+        className={`mb-12 flex flex-wrap items-end justify-between gap-x-4 gap-y-6 ${className}`}
+      >
         <div>{heading}</div>
-        {lead ? <p className="w-full max-w-sm text-body text-ink-2 lg:w-auto">{lead}</p> : null}
+        {lead ? (
+          <p className="w-full max-w-sm text-body text-ink-2 lg:w-auto">
+            {lead}
+          </p>
+        ) : null}
       </div>
     );
   }
@@ -35,7 +41,11 @@ export function SectionHeader({
   return (
     <div className={className}>
       {heading}
-      {lead ? <p className="mt-5 max-w-sm text-body leading-relaxed text-ink-2">{lead}</p> : null}
+      {lead ? (
+        <p className="mt-5 max-w-sm text-body leading-relaxed text-ink-2">
+          {lead}
+        </p>
+      ) : null}
     </div>
   );
 }

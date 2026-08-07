@@ -11,9 +11,17 @@ type ButtonLinkProps = {
   children: ReactNode;
 } & ComponentPropsWithoutRef<"a">;
 
-export function ButtonLink({ variant = "primary", children, className = "", ...props }: ButtonLinkProps) {
+export function ButtonLink({
+  variant = "primary",
+  children,
+  className = "",
+  ...props
+}: ButtonLinkProps) {
   return (
-    <a className={`${variant === "primary" ? primaryButton : ghostButton} ${className}`} {...props}>
+    <a
+      className={`${variant === "primary" ? primaryButton : ghostButton} ${className}`}
+      {...props}
+    >
       {children}
     </a>
   );
@@ -25,7 +33,10 @@ type ButtonProps = {
 
 export function Button({ children, className = "", ...props }: ButtonProps) {
   return (
-    <button className={`${primaryButton} justify-center ${className}`} {...props}>
+    <button
+      className={`${primaryButton} justify-center ${className}`}
+      {...props}
+    >
       {children}
     </button>
   );
