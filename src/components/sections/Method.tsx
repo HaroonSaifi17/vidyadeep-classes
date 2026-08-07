@@ -24,9 +24,19 @@ export function Method() {
               }
               lead="We don’t believe in cramming. We believe in a disciplined loop that repeats until understanding becomes habit."
             />
-            <div className="mt-8 rounded-r-lg border-l-4 border-saffron bg-saffron-soft p-4 text-body leading-relaxed text-note-ink">
-              Plus — Sunday doubt-clearing hour, monthly mock exams and one-on-one mentoring for
-              every student.
+
+            <div className="relative mt-7 hidden overflow-hidden rounded-xl border border-line bg-paper-2 shadow-card sm:block">
+              <img
+                src="/images/smart_classroom.webp"
+                alt="Interactive smart board session at Vidyadeep Classes"
+                className="h-44 w-full object-cover transition-transform duration-500 hover:scale-105"
+                loading="lazy"
+              />
+              <div className="p-3 text-center">
+                <span className="text-fine font-bold uppercase tracking-label text-ink-2">
+                  Interactive Smart Classrooms
+                </span>
+              </div>
             </div>
           </Reveal>
         </div>

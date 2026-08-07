@@ -16,13 +16,6 @@ const HERO_LINES = [
 function HeroCopy() {
   return (
     <div>
-      <div className="mb-7 flex items-center gap-3 text-sm font-semibold uppercase tracking-eyebrow text-ink-2">
-        <span className="relative h-2 w-2 rounded-full bg-saffron">
-          <span aria-hidden className="absolute -inset-1 rounded-full border border-saffron animate-pulse-ring" />
-        </span>
-        <span>New campus · 7 years of mentorship behind it</span>
-      </div>
-
       <h1 className="font-display text-h1">
         {HERO_LINES.map((line) => (
           <span key={line.text} className="block overflow-hidden pb-1">
@@ -84,13 +77,14 @@ function RotatingBadge() {
         </text>
       </svg>
       <span className="absolute inset-0 grid place-items-center">
-        <FlameIcon size={22} />
+        <span className="drop-shadow-md transition-transform duration-300 hover:scale-110">
+          <FlameIcon size={38} />
+        </span>
       </span>
     </div>
   );
 }
 
-/* SWAP: replace picsum sources with the client's real classroom photos */
 function Polaroid({
   src,
   alt,
@@ -107,10 +101,10 @@ function Polaroid({
   className: string;
 }) {
   return (
-    <figure className={`absolute bg-white p-2.5 pb-6 shadow-photo ${className}`}>
-      <span aria-hidden className={`absolute -top-2 h-6 w-16 bg-tape/60 shadow-sm ${tapeClassName}`} />
-      <img src={src} alt={alt} loading={eager ? "eager" : "lazy"} className="block w-full" />
-      <figcaption className="absolute inset-x-0 bottom-2.5 font-display text-fine italic text-ink-2">
+    <figure className={`absolute rounded-xl bg-white p-3 pb-8 shadow-photo ${className}`}>
+      <span aria-hidden className={`absolute -top-2 h-6 w-16 bg-tape/80 shadow-sm ${tapeClassName}`} />
+      <img src={src} alt={alt} loading={eager ? "eager" : "lazy"} className="block w-full rounded-lg" />
+      <figcaption className="absolute inset-x-0 bottom-2.5 px-3 text-center font-display text-fine italic text-ink-2">
         {caption}
       </figcaption>
     </figure>
@@ -141,19 +135,19 @@ function HeroMedia() {
     <div className="relative mx-auto h-hero w-full max-w-xl sm:h-hero-sm lg:h-hero-lg">
       <RotatingBadge />
       <Polaroid
-        src="https://picsum.photos/seed/vidyadeep-classroom-students/640/460"
-        alt="Students studying attentively in a Vidyadeep classroom"
-        caption="in session — foundation batch"
+        src="/images/classroom_hero.webp"
+        alt="Students studying attentively in a real Vidyadeep classroom"
+        caption="in session — real classroom"
         eager
         tapeClassName="left-8 -rotate-6"
-        className="left-0 top-0 w-3/4 rotate-2 transition-transform duration-500 hover:rotate-0"
+        className="left-0 top-0 w-4/5 sm:w-3/4 rotate-2 transition-transform duration-500 hover:rotate-0 hover:z-20"
       />
       <Polaroid
-        src="https://picsum.photos/seed/vidyadeep-study-focus/380/420"
-        alt="A student focused on practice work"
-        caption="practice hour"
+        src="/images/hero_study.webp"
+        alt="A student focused on daily practice work"
+        caption="daily practice hour"
         tapeClassName="right-6 rotate-6"
-        className="bottom-10 right-0 z-10 w-1/2 rotate-2 transition-transform duration-500 hover:-rotate-1"
+        className="bottom-6 right-0 z-10 w-3/5 sm:w-1/2 -rotate-3 transition-transform duration-500 hover:rotate-0 hover:z-20"
       />
       <FloatCard />
     </div>

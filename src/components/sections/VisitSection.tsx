@@ -89,6 +89,26 @@ export function VisitSection() {
               <DetailRow key={detail.title} {...detail} />
             ))}
           </div>
+
+          <div className="mt-6 flex flex-wrap gap-3">
+            <a
+              href="tel:+919876543210"
+              className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-4 py-2 text-sm font-semibold text-ink transition-colors hover:border-saffron hover:bg-saffron-soft"
+            >
+              <PhoneIcon size={14} className="text-saffron" />
+              Call Now
+            </a>
+            <a
+              href="https://maps.google.com/?q=Vidyadeep+Classes+Main+Road"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-4 py-2 text-sm font-semibold text-ink transition-colors hover:border-saffron hover:bg-saffron-soft"
+            >
+              <PinIcon size={14} className="text-saffron" />
+              Get Directions
+            </a>
+          </div>
+
           <p className="mt-6 font-display text-lead italic text-saffron-ink">
             Bring the last marksheet along — we’ll map the plan around it.
           </p>

@@ -37,10 +37,12 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <ButtonLink href="#visit" className="hidden sm:inline-flex">
-            Book a visit
-            <ArrowIcon className="transition-transform duration-300 group-hover:translate-x-1" />
-          </ButtonLink>
+          <div className="hidden lg:block">
+            <ButtonLink href="#visit">
+              Book a visit
+              <ArrowIcon className="transition-transform duration-300 group-hover:translate-x-1" />
+            </ButtonLink>
+          </div>
           <button
             type="button"
             onClick={() => setOpen((value) => !value)}
@@ -66,7 +68,7 @@ export function Navbar() {
                 {label}
               </a>
             ))}
-            <ButtonLink href="#visit" className="mt-2 justify-center sm:hidden">
+            <ButtonLink href="#visit" onClick={() => setOpen(false)} className="mt-2 justify-center lg:hidden">
               Book a visit
               <ArrowIcon className="transition-transform duration-300 group-hover:translate-x-1" />
             </ButtonLink>

@@ -32,33 +32,6 @@ function StatItem({ value, suffix, label, started, delay }: StatItemProps) {
   );
 }
 
-function ResultGhosts() {
-  const ghosts = [
-    { className: "-rotate-3" },
-    { className: "z-10 translate-y-2 rotate-2" },
-    { className: "-rotate-2" },
-  ];
-
-  return (
-    <div className="flex justify-center py-7" aria-hidden="true">
-      {ghosts.map((ghost, index) => (
-        <div
-          key={index}
-          className={`relative w-37.5 rounded-lg border border-white/15 bg-white/5 p-4 pb-7 ${index > 0 ? "-ml-7" : ""} ${ghost.className}`}
-        >
-          <div className="h-2 rounded-full bg-white/15" />
-          <div className="mt-2.5 h-2 w-3/5 rounded-full bg-white/15" />
-          <div className="mt-2.5 h-2 rounded-full bg-white/15" />
-          <div className="mt-2.5 h-2 w-3/4 rounded-full bg-white/15" />
-          <span className="absolute -bottom-3 left-1/2 -translate-x-1/2 -rotate-6 rounded-sm border border-gold/55 bg-ink px-2 py-1 whitespace-nowrap text-label uppercase tracking-label text-gold">
-            Awaiting result
-          </span>
-        </div>
-      ))}
-    </div>
-  );
-}
-
 export function TrackRecord() {
   const { ref, inView } = useInView<HTMLElement>(0.25);
 
@@ -90,20 +63,35 @@ export function TrackRecord() {
         </div>
 
         <Reveal>
-          <div className="mt-14 rounded-xl border border-dashed border-cream/25 p-6 sm:p-12">
+          <div className="mt-14 rounded-xl border border-dashed border-cream/25 p-6 sm:p-10">
             <div className="grid items-center gap-8 lg:grid-cols-2">
               <div>
                 <span className="mb-5 inline-block rounded-full border border-gold/40 px-3 py-1 text-label uppercase tracking-loose text-gold">
-                  Topper wall · In the making
+                  Topper Wall &amp; Mentorship
                 </span>
-                <h3 className="font-display text-h3">This wall is reserved for our first batch.</h3>
+                <h3 className="font-display text-h3">Celebrating every student milestone.</h3>
                 <p className="mt-3 max-w-md text-body leading-relaxed text-band-muted">
-                  The day our students’ results are declared, their scoresheets go up here. Until
-                  then — visit us and ask about our mentors’ past results in person. We’ll happily
-                  walk you through them.
+                  From scholarship awards to monthly test toppers — we celebrate progress at every step.
+                  Visit our campus to see our full wall of honor and past student achievements.
                 </p>
+                <div className="mt-6 flex items-center gap-3">
+                  <span className="h-2.5 w-2.5 rounded-full bg-gold animate-pulse" />
+                  <span className="text-fine font-semibold text-gold">Real Campus Award Ceremonies</span>
+                </div>
               </div>
-              <ResultGhosts />
+
+              <div className="relative overflow-hidden rounded-xl border border-white/20 bg-white/5 p-2 shadow-2xl">
+                <img
+                  src="/images/achievements.webp"
+                  alt="Student awards and recognition ceremony at Vidyadeep Classes"
+                  className="h-56 w-full rounded-lg object-cover sm:h-64"
+                  loading="lazy"
+                />
+                <div className="absolute bottom-4 left-4 right-4 rounded-lg bg-ink/90 p-3 text-center backdrop-blur-md">
+                  <p className="font-display text-sm text-gold">Student Recognition &amp; Laptop/Tablet Awards</p>
+                  <p className="text-fine text-cream-muted">Vidyadeep Mentorship Heritage</p>
+                </div>
+              </div>
             </div>
           </div>
         </Reveal>
