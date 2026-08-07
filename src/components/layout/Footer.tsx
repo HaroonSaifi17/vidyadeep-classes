@@ -39,7 +39,7 @@ function FooterColumn({ title, links }: (typeof FOOTER_COLUMNS)[number]) {
           <li key={link.label}>
             <a
               href={link.href}
-              className="inline-block py-0.5 text-sm text-ink-2 transition-all hover:translate-x-0.5 hover:text-saffron"
+              className="inline-block py-1 text-sm text-ink-2 transition-all hover:translate-x-0.5 hover:text-saffron"
             >
               {link.label}
             </a>

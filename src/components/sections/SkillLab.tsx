@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { COURSES, type Course } from "../../content/site";
 import { ArrowIcon, CheckIcon } from "../ui/icons";
 import { Container } from "../ui/Container";
@@ -32,6 +32,16 @@ function LabPhoto() {
 export function SkillLab() {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedCourse(null);
+    };
+    if (selectedCourse) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedCourse]);
+
   return (
     <section id="lab" className="scroll-mt-24 bg-cream py-16 sm:py-24">
       <Container className="grid gap-12 lg:grid-cols-lab">
@@ -51,12 +61,21 @@ export function SkillLab() {
           </Reveal>
         </div>
 
-        <div>
+        <div className="border-b border-line">
           {COURSES.map((course, index) => (
             <Reveal key={course.number} delay={index * 0.05}>
               <div
+                role="button"
+                tabIndex={0}
+                aria-label={`View syllabus details for ${course.name}`}
                 onClick={() => setSelectedCourse(course)}
-                className="group grid cursor-pointer items-center gap-3 border-t border-line px-2 py-5 transition-all duration-300 hover:bg-paper-2 sm:grid-cols-course sm:hover:px-5 rounded-lg"
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    setSelectedCourse(course);
+                  }
+                }}
+                className="group grid cursor-pointer items-center gap-3 border-t border-line px-2 py-5 transition-all duration-300 hover:bg-paper-2 focus-visible:outline-2 focus-visible:outline-saffron sm:grid-cols-course sm:hover:px-5 rounded-lg"
               >
                 <span className="hidden font-display text-sm italic text-ink-2 sm:block">
                   {course.number}
@@ -83,6 +102,9 @@ export function SkillLab() {
       {/* Course Detail Modal */}
       {selectedCourse ? (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="course-modal-title"
           className="fixed inset-0 z-50 flex items-center justify-center bg-ink/60 p-4 backdrop-blur-sm animate-fade-up"
           onClick={() => setSelectedCourse(null)}
         >
@@ -95,12 +117,13 @@ export function SkillLab() {
                 <span className="text-label uppercase tracking-label font-bold text-saffron">
                   Course #{selectedCourse.number}
                 </span>
-                <h3 className="font-display text-h3 mt-1">{selectedCourse.name}</h3>
+                <h3 id="course-modal-title" className="font-display text-h3 mt-1">{selectedCourse.name}</h3>
               </div>
               <button
                 type="button"
+                aria-label="Close course details modal"
                 onClick={() => setSelectedCourse(null)}
-                className="grid h-8 w-8 place-items-center rounded-full bg-paper text-ink-2 hover:bg-line hover:text-ink"
+                className="grid h-11 w-11 place-items-center rounded-full bg-paper text-ink-2 hover:bg-line hover:text-ink focus-visible:outline-2 focus-visible:outline-saffron"
               >
                 ✕
               </button>

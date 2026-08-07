@@ -11,6 +11,14 @@ export function useInView<T extends HTMLElement>(
     const target = ref.current;
     if (!target) return;
 
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      setInView(true);
+      return;
+    }
+
     if (typeof IntersectionObserver === "undefined") {
       setInView(true);
       return;

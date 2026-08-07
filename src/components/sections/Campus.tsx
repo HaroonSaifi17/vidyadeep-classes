@@ -53,8 +53,17 @@ function PhotoTile({
 }) {
   return (
     <figure
+      role="button"
+      tabIndex={0}
+      aria-label={`View full photo of ${photo.caption}`}
       onClick={onClick}
-      className={`group relative cursor-pointer overflow-hidden rounded-xl border border-line/80 bg-paper-2 shadow-md ${photo.className}`}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onClick();
+        }
+      }}
+      className={`group relative cursor-pointer overflow-hidden rounded-xl border border-line/80 bg-paper-2 shadow-md focus-visible:outline-2 focus-visible:outline-saffron ${photo.className}`}
     >
       <img
         src={photo.src}
@@ -69,6 +78,7 @@ function PhotoTile({
         </span>
         <button
           type="button"
+          tabIndex={-1}
           className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg bg-white/90 px-3 py-1.5 text-fine font-bold text-ink shadow-md backdrop-blur-md transition-all duration-300 group-hover:bg-white group-hover:shadow-lg group-hover:scale-105"
         >
           <MagnifyIcon size={14} className="shrink-0 transition-transform duration-300 group-hover:scale-110" />
@@ -142,6 +152,9 @@ export function Campus() {
       {/* Lightbox Modal */}
       {activePhoto ? (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="lightbox-photo-title"
           className="fixed inset-0 z-50 flex items-center justify-center bg-ink/80 p-4 backdrop-blur-md animate-fade-up"
           onClick={() => setActivePhoto(null)}
         >
@@ -151,8 +164,9 @@ export function Campus() {
           >
             <button
               type="button"
+              aria-label="Close photo preview modal"
               onClick={() => setActivePhoto(null)}
-              className="absolute top-5 right-5 z-10 grid h-10 w-10 place-items-center rounded-full bg-ink/70 text-cream hover:bg-ink"
+              className="absolute top-5 right-5 z-10 grid h-11 w-11 place-items-center rounded-full bg-ink/80 text-cream hover:bg-ink focus-visible:outline-2 focus-visible:outline-saffron"
             >
               ✕
             </button>
@@ -162,7 +176,7 @@ export function Campus() {
               className="max-h-[75vh] w-full rounded-xl object-contain bg-ink"
             />
             <div className="p-4 text-center">
-              <h3 className="font-display text-h3 text-ink">{activePhoto.caption}</h3>
+              <h3 id="lightbox-photo-title" className="font-display text-h3 text-ink">{activePhoto.caption}</h3>
               <p className="mt-1 text-body text-ink-2">{activePhoto.detail}</p>
             </div>
           </div>

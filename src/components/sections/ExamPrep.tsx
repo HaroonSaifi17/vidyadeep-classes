@@ -25,7 +25,7 @@ export function ExamPrep() {
         </Reveal>
 
         <Reveal delay={0.05}>
-          <div>
+          <div className="border-b border-line">
             {EXAM_TRACKS.map((track, index) => (
               <Accordion
                 key={track.name}

@@ -23,7 +23,7 @@ export function FaqSection() {
           </Reveal>
         </div>
 
-        <div>
+        <div className="border-b border-line">
           {FAQS.map((faq, index) => (
             <Reveal key={faq.question} delay={index * 0.04}>
               <Accordion

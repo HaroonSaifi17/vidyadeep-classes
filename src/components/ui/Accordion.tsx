@@ -5,13 +5,14 @@ interface AccordionProps {
   heading: ReactNode;
   children: ReactNode;
   defaultOpen?: boolean;
+  className?: string;
 }
 
-export function Accordion({ heading, children, defaultOpen = false }: AccordionProps) {
+export function Accordion({ heading, children, defaultOpen = false, className = "" }: AccordionProps) {
   const [open, setOpen] = useState(defaultOpen);
 
   return (
-    <div className="border-t border-line last:border-b">
+    <div className={`border-t border-line ${className}`}>
       <button
         type="button"
         aria-expanded={open}

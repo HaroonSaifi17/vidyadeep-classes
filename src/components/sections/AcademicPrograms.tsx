@@ -57,7 +57,7 @@ export function AcademicPrograms() {
         />
 
         <Reveal>
-          <div role="tablist" aria-label="Class groups" className="mb-11 flex gap-1.5 border-b border-line">
+          <div role="tablist" aria-label="Class groups" className="mb-11 flex gap-1.5 overflow-x-auto border-b border-line pb-0.5 no-scrollbar">
             {PROGRAM_KEYS.map((key) => {
               const selected = active === key;
               return (

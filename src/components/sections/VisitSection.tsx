@@ -62,11 +62,19 @@ export function VisitSection() {
     phone: "",
     course: COURSE_OPTIONS[1],
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (form.name.trim() && form.phone.trim()) setSubmitted(true);
+    if (isSubmitting) return;
+    if (form.name.trim() && form.phone.trim()) {
+      setIsSubmitting(true);
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setSubmitted(true);
+      }, 400);
+    }
   };
 
   return (
@@ -131,6 +139,7 @@ export function VisitSection() {
                     id="visit-name"
                     type="text"
                     required
+                    maxLength={70}
                     placeholder="e.g. Aarav Sharma"
                     value={form.name}
                     onChange={(event) => setForm({ ...form, name: event.target.value })}
@@ -142,9 +151,10 @@ export function VisitSection() {
                   <input
                     id="visit-phone"
                     type="tel"
-                    inputMode="numeric"
+                    inputMode="tel"
                     required
-                    placeholder="+91 …"
+                    maxLength={15}
+                    placeholder="+91 98765 43210"
                     value={form.phone}
                     onChange={(event) => setForm({ ...form, phone: event.target.value })}
                     className={inputClass}
@@ -164,8 +174,8 @@ export function VisitSection() {
                   </select>
                 </Field>
 
-                <Button type="submit" className="w-full">
-                  Request a call back
+                <Button type="submit" disabled={isSubmitting} className="w-full disabled:opacity-60">
+                  {isSubmitting ? "Submitting..." : "Request a call back"}
                   <ArrowIcon className="transition-transform duration-300 group-hover:translate-x-1" />
                 </Button>
               </div>

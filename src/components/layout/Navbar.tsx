@@ -48,7 +48,7 @@ export function Navbar() {
             onClick={() => setOpen((value) => !value)}
             aria-expanded={open}
             aria-label="Toggle navigation"
-            className="grid h-10 w-10 place-items-center rounded-lg border border-line lg:hidden"
+            className="grid h-11 w-11 place-items-center rounded-lg border border-line bg-paper-2 transition-colors hover:bg-hover focus-visible:outline-2 focus-visible:outline-saffron lg:hidden"
           >
             <MenuIcon open={open} />
           </button>
@@ -57,18 +57,18 @@ export function Navbar() {
 
       {open ? (
         <div className="border-t border-line bg-paper lg:hidden">
-          <Container className="flex flex-col gap-1 py-4">
+          <Container className="flex flex-col gap-1.5 py-4">
             {NAV_SECTIONS.map(({ label, href }) => (
               <a
                 key={href}
                 href={href}
                 onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-2.5 text-sm font-medium text-ink-2 transition-colors hover:bg-hover hover:text-ink"
+                className="flex min-h-[44px] items-center rounded-lg px-3.5 py-3 text-sm font-semibold text-ink-2 transition-colors hover:bg-hover hover:text-ink"
               >
                 {label}
               </a>
             ))}
-            <ButtonLink href="#visit" onClick={() => setOpen(false)} className="mt-2 justify-center lg:hidden">
+            <ButtonLink href="#visit" onClick={() => setOpen(false)} className="mt-2 min-h-[44px] justify-center lg:hidden">
               Book a visit
               <ArrowIcon className="transition-transform duration-300 group-hover:translate-x-1" />
             </ButtonLink>
