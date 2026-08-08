@@ -114,21 +114,28 @@ function Polaroid({
 }) {
   return (
     <figure
-      className={`absolute rounded-xl bg-white p-3 pb-8 shadow-photo ${className}`}
+      className={`group absolute rounded-xl bg-white p-3 pb-8 shadow-photo transition-all duration-500 hover:shadow-2xl ${className}`}
     >
       <span
         aria-hidden
         className={`absolute -top-2 h-6 w-16 bg-tape/80 shadow-sm ${tapeClassName}`}
       />
-      <img
-        src={src}
-        alt={alt}
-        loading={eager ? "eager" : "lazy"}
-        decoding="async"
-        fetchPriority={eager ? "high" : "auto"}
-        className="block w-full rounded-lg"
-      />
-      <figcaption className="absolute inset-x-0 bottom-2.5 px-3 text-center font-display text-fine italic text-ink-2">
+      <div className="relative overflow-hidden rounded-lg">
+        <img
+          src={src}
+          alt={alt}
+          loading={eager ? "eager" : "lazy"}
+          decoding="async"
+          fetchPriority={eager ? "high" : "auto"}
+          className="block w-full rounded-lg transition-transform duration-500 ease-out group-hover:scale-105"
+        />
+        {/* Trust Sapphire Blue tint filter at rest, clearing smoothly on hover */}
+        <div
+          className="absolute inset-0 rounded-lg bg-saffron/20 mix-blend-multiply opacity-85 transition-opacity duration-500 group-hover:opacity-0 pointer-events-none"
+          aria-hidden="true"
+        />
+      </div>
+      <figcaption className="absolute inset-x-0 bottom-2.5 px-3 text-center font-display text-fine italic text-ink-2 transition-colors duration-300 group-hover:text-saffron">
         {caption}
       </figcaption>
     </figure>

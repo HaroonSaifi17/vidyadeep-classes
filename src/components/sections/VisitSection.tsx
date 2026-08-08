@@ -19,7 +19,7 @@ const DETAILS = [
 ];
 
 const inputClass =
-  "w-full rounded-lg border border-line bg-paper-2 px-3.5 py-3 text-body text-ink transition-colors placeholder:text-ink-2/60 focus:border-ink focus:outline-none focus:ring-2 focus:ring-saffron/20";
+  "w-full rounded-xl border border-line bg-paper-2 px-4 py-3 text-body text-ink transition-all placeholder:text-ink-2/50 focus:border-saffron focus:bg-white focus:outline-none focus:ring-4 focus:ring-saffron/15 shadow-2xs";
 
 function DetailRow({ title, value, icon: Icon }: (typeof DETAILS)[number]) {
   return (
@@ -60,17 +60,17 @@ function Field({
 function SuccessPanel({ name, course }: { name: string; course: string }) {
   return (
     <div
-      className="rounded-xl border border-line bg-white p-8 text-center shadow-form"
+      className="rounded-2xl border border-line border-t-4 border-t-saffron bg-white p-8 text-center shadow-form"
       role="status"
     >
-      <div className="mx-auto mb-5 grid h-14 w-14 animate-pop place-items-center rounded-full bg-sage text-sage-ink">
-        <CheckIcon size={22} />
+      <div className="mx-auto mb-5 grid h-14 w-14 animate-pop place-items-center rounded-full bg-saffron-soft text-saffron-ink">
+        <CheckIcon size={24} />
       </div>
       <h3 className="font-display text-h2">Thank you, {name.split(" ")[0]}!</h3>
       <p className="mt-2 text-body leading-relaxed text-ink-2">
         We’ve noted your interest in <strong>{course}</strong>.
         <br />
-        Our team will call you within one working day.
+        Our academic coordinator will call you within one working day.
       </p>
     </div>
   );
@@ -121,7 +121,7 @@ export function VisitSection() {
           <div className="mt-6 flex flex-wrap gap-3">
             <a
               href="tel:+919876543210"
-              className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-4 py-2 text-sm font-semibold text-ink transition-colors hover:border-saffron hover:bg-saffron-soft"
+              className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-4 py-2 text-sm font-semibold text-ink transition-all hover:border-saffron hover:bg-saffron-soft hover:shadow-xs"
             >
               <PhoneIcon size={14} className="text-saffron" />
               Call Now
@@ -130,7 +130,7 @@ export function VisitSection() {
               href="https://maps.google.com/?q=Vidyadeep+Classes+Main+Road"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-4 py-2 text-sm font-semibold text-ink transition-colors hover:border-saffron hover:bg-saffron-soft"
+              className="inline-flex items-center gap-2 rounded-full border border-line bg-paper px-4 py-2 text-sm font-semibold text-ink transition-all hover:border-saffron hover:bg-saffron-soft hover:shadow-xs"
             >
               <PinIcon size={14} className="text-saffron" />
               Get Directions
@@ -148,11 +148,16 @@ export function VisitSection() {
           ) : (
             <form
               onSubmit={handleSubmit}
-              className="rounded-xl border border-line bg-white p-7 shadow-form sm:p-9"
+              className="rounded-2xl border border-line border-t-4 border-t-saffron bg-white p-7 shadow-form sm:p-9 transition-all hover:shadow-xl"
             >
-              <h3 className="font-display text-h3">Request a call back</h3>
+              <div className="flex items-center justify-between gap-2">
+                <h3 className="font-display text-h3">Request a call back</h3>
+                <span className="rounded-full bg-saffron-soft px-2.5 py-1 text-[10px] font-bold text-saffron-ink uppercase tracking-wider">
+                  Free Counseling
+                </span>
+              </div>
               <p className="mt-1 text-body text-ink-2">
-                We reply within one working day.
+                We reply within one working day with batch details & fees.
               </p>
 
               <div className="mt-7 space-y-5">
@@ -187,7 +192,7 @@ export function VisitSection() {
                   />
                 </Field>
 
-                <Field id="visit-course" label="Interested in">
+                <Field id="visit-course" label="Interested in track">
                   <select
                     id="visit-course"
                     value={form.course}
@@ -205,11 +210,16 @@ export function VisitSection() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full disabled:opacity-60"
+                  className="w-full justify-center disabled:opacity-60 shadow-md transition-all hover:shadow-lg"
                 >
                   {isSubmitting ? "Submitting..." : "Request a call back"}
                   <ArrowIcon className="transition-transform duration-300 group-hover:translate-x-1" />
                 </Button>
+
+                <p className="text-center text-xs text-ink-2 flex items-center justify-center gap-1.5 pt-1">
+                  <span>🔒</span>
+                  <span>100% Confidential · Direct response from faculty</span>
+                </p>
               </div>
             </form>
           )}
