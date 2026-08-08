@@ -79,8 +79,8 @@ function RotatingBadge() {
             fontSize: 11,
             letterSpacing: 2.6,
             fontWeight: 700,
-            fill: "#26231C",
-            fontFamily: "'Instrument Sans', sans-serif",
+            fill: "var(--color-ink)",
+            fontFamily: "var(--font-sans)",
           }}
         >
           <textPath href="#vd-circ">

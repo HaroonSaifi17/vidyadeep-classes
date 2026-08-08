@@ -2,60 +2,60 @@
 
 @theme {
   /* Typography */
-  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
 
-  /* Brand palette — paper neutrals with a saffron accent */
-  --color-paper: #faf6ee;
-  --color-paper-2: #fffdf6;
-  --color-ink: #26231c;
-  --color-ink-2: #6b6255;
-  --color-ink-soft: #3b3527;
-  --color-line: #e7dfcc;
-  --color-line-soft: #e0d5be;
-  --color-cream: #f5efdf;
-  --color-cream-muted: #b7ae97;
-  --color-band-muted: #c9c1ac;
-  --color-gold: #f2c879;
-  --color-saffron: #d98324;
-  --color-saffron-ink: #8a5312;
-  --color-saffron-soft: #fbe3cf;
-  --color-note-ink: #6b4a17;
-  --color-tape: #e2b25e;
-  --color-hover: #fff9ec;
-  --color-sage: #edf2e2;
-  --color-sage-ink: #5c7248;
-  --color-blush: #faede0;
-  --color-sky: #e9f0f3;
-  --color-live: #5c9a52;
+  /* Brand palette — Trust Sapphire Blue with Slate neutrals */
+  --color-paper: #f8fafc;
+  --color-paper-2: #ffffff;
+  --color-ink: #0f172a;
+  --color-ink-2: #475569;
+  --color-ink-soft: #334155;
+  --color-line: #cbd5e1;
+  --color-line-soft: #e2e8f0;
+  --color-cream: #eff6ff;
+  --color-cream-muted: #94a3b8;
+  --color-band-muted: #cbd5e1;
+  --color-gold: #eab308;
+  --color-saffron: #2563eb;
+  --color-saffron-ink: #1e40af;
+  --color-saffron-soft: #dbeafe;
+  --color-note-ink: #1e3a8a;
+  --color-tape: #3b82f6;
+  --color-hover: #f0f9ff;
+  --color-sage: #e0f2fe;
+  --color-sage-ink: #0369a1;
+  --color-blush: #e0e7ff;
+  --color-sky: #e0f2fe;
+  --color-live: #2563eb;
 
-  /* Type scale */
+  /* Type scale & typography micro-settings */
   --text-label: 10.5px;
   --text-kicker: 11.5px;
   --text-fine: 12.5px;
   --text-body: 15px;
-  --text-body--line-height: 1.55;
+  --text-body--line-height: 1.6;
   --text-lead: 17px;
-  --text-lead--line-height: 1.55;
+  --text-lead--line-height: 1.6;
   --text-h1: clamp(44px, 6.2vw, 78px);
-  --text-h1--line-height: 1.02;
-  --text-h1--letter-spacing: -0.02em;
+  --text-h1--line-height: 1.05;
+  --text-h1--letter-spacing: -0.03em;
   --text-h2: clamp(26px, 3.8vw, 46px);
-  --text-h2--line-height: 1.07;
-  --text-h2--letter-spacing: -0.02em;
+  --text-h2--line-height: 1.1;
+  --text-h2--letter-spacing: -0.025em;
   --text-h3: clamp(20px, 2.4vw, 27px);
-  --text-h3--line-height: 1.2;
-  --text-h3--letter-spacing: -0.01em;
+  --text-h3--line-height: 1.25;
+  --text-h3--letter-spacing: -0.015em;
   --text-quote: clamp(24px, 3.2vw, 38px);
-  --text-quote--line-height: 1.25;
+  --text-quote--line-height: 1.3;
   --text-stat: 56px;
   --text-stat--line-height: 1;
 
   /* Letter spacing */
-  --tracking-eyebrow: 0.16em;
-  --tracking-kicker: 0.2em;
-  --tracking-label: 0.14em;
-  --tracking-loose: 0.22em;
+  --tracking-eyebrow: 0.14em;
+  --tracking-kicker: 0.18em;
+  --tracking-label: 0.12em;
+  --tracking-loose: 0.2em;
 
   /* Grid templates */
   --grid-template-columns-hero: minmax(0, 1.05fr) minmax(0, 0.95fr);

@@ -2,45 +2,45 @@
 name: Vidyadeep Classes
 description: Academic Coaching & Practical Skill Lab Learning Institute
 colors:
-  primary: "#d98324"
-  primary-ink: "#8a5312"
-  primary-soft: "#fbe3cf"
-  neutral-bg: "#faf6ee"
-  neutral-surface: "#fffdf6"
-  neutral-ink: "#26231c"
-  neutral-ink-muted: "#6b6255"
-  neutral-line: "#e7dfcc"
-  accent-gold: "#f2c879"
-  accent-sage: "#edf2e2"
+  primary: "#2563eb"
+  primary-ink: "#1e40af"
+  primary-soft: "#dbeafe"
+  neutral-bg: "#f8fafc"
+  neutral-surface: "#ffffff"
+  neutral-ink: "#0f172a"
+  neutral-ink-muted: "#475569"
+  neutral-line: "#cbd5e1"
+  accent-gold: "#eab308"
+  accent-sage: "#e0f2fe"
 typography:
   display:
-    fontFamily: "Fraunces, ui-serif, Georgia, serif"
+    fontFamily: "Space Grotesk, ui-sans-serif, system-ui, sans-serif"
     fontSize: "clamp(44px, 6.2vw, 78px)"
-    fontWeight: 600
-    lineHeight: 1.02
-    letterSpacing: "-0.02em"
+    fontWeight: 700
+    lineHeight: 1.05
+    letterSpacing: "-0.03em"
   headline:
-    fontFamily: "Fraunces, ui-serif, Georgia, serif"
+    fontFamily: "Space Grotesk, ui-sans-serif, system-ui, sans-serif"
     fontSize: "clamp(26px, 3.8vw, 46px)"
     fontWeight: 600
-    lineHeight: 1.07
-    letterSpacing: "-0.02em"
+    lineHeight: 1.1
+    letterSpacing: "-0.025em"
   title:
-    fontFamily: "Fraunces, ui-serif, Georgia, serif"
+    fontFamily: "Space Grotesk, ui-sans-serif, system-ui, sans-serif"
     fontSize: "clamp(20px, 2.4vw, 27px)"
     fontWeight: 600
-    lineHeight: 1.2
-    letterSpacing: "-0.01em"
+    lineHeight: 1.25
+    letterSpacing: "-0.015em"
   body:
-    fontFamily: "Instrument Sans, ui-sans-serif, system-ui, sans-serif"
+    fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif"
     fontSize: "15px"
     fontWeight: 400
-    lineHeight: 1.55
+    lineHeight: 1.6
   label:
-    fontFamily: "Instrument Sans, ui-sans-serif, system-ui, sans-serif"
+    fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif"
     fontSize: "10.5px"
     fontWeight: 600
-    letterSpacing: "0.14em"
+    letterSpacing: "0.12em"
 rounded:
   sm: "4px"
   md: "8px"
