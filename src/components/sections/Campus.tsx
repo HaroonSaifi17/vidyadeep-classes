@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FACILITIES } from "../../content/site";
-import { CheckIcon, FlameIcon, MagnifyIcon } from "../ui/icons";
+import { CheckIcon, CloseIcon, FlameIcon, MagnifyIcon } from "../ui/icons";
 import { Container } from "../ui/Container";
 import { Reveal } from "../ui/Reveal";
 import { SectionHeader } from "../ui/SectionHeader";
@@ -181,9 +181,9 @@ export function Campus() {
               type="button"
               aria-label="Close photo preview modal"
               onClick={() => setActivePhoto(null)}
-              className="absolute top-5 right-5 z-10 grid h-11 w-11 place-items-center rounded-full bg-ink/80 text-cream hover:bg-ink focus-visible:outline-2 focus-visible:outline-saffron"
+              className="absolute top-5 right-5 z-10 grid h-11 w-11 place-items-center rounded-full bg-ink/80 text-cream transition-colors hover:bg-ink focus-visible:outline-2 focus-visible:outline-saffron"
             >
-              ✕
+              <CloseIcon size={20} />
             </button>
             <img
               src={activePhoto.src}

@@ -1,4 +1,5 @@
 import { TICKER_ITEMS } from "../../content/site";
+import { Sparkles } from "../ui/icons";
 
 export function TickerRow() {
   const items = [...TICKER_ITEMS, ...TICKER_ITEMS];
@@ -15,7 +16,7 @@ export function TickerRow() {
             className="flex items-center gap-7 pr-7 whitespace-nowrap font-display text-lg text-ink"
           >
             {item}
-            <span className="text-sm text-saffron">✦</span>
+            <Sparkles size={14} className="shrink-0 text-saffron" />
           </span>
         ))}
       </div>

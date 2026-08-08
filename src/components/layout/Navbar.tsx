@@ -2,21 +2,9 @@ import { useState } from "react";
 import { useScrollDirection } from "../../hooks/useScrollDirection";
 import { NAV_SECTIONS } from "../../content/site";
 import { ButtonLink } from "../ui/Button";
-import { ArrowIcon } from "../ui/icons";
+import { ArrowIcon, MenuToggleIcon } from "../ui/icons";
 import { Brand } from "../ui/Brand";
 import { Container } from "../ui/Container";
-
-function MenuIcon({ open }: { open: boolean }) {
-  const line =
-    "h-0.5 w-5 rounded-full bg-ink transition-transform duration-300";
-  return (
-    <span className="flex flex-col items-center gap-1.5" aria-hidden>
-      <span className={`${line} ${open ? "translate-y-2 rotate-45" : ""}`} />
-      <span className={`${line} ${open ? "opacity-0" : ""}`} />
-      <span className={`${line} ${open ? "-translate-y-2 -rotate-45" : ""}`} />
-    </span>
-  );
-}
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -67,7 +55,7 @@ export function Navbar() {
             aria-label="Toggle navigation"
             className="grid h-11 w-11 place-items-center rounded-lg border border-line bg-paper-2 transition-colors hover:bg-hover focus-visible:outline-2 focus-visible:outline-saffron lg:hidden"
           >
-            <MenuIcon open={open} />
+            <MenuToggleIcon open={open} size={22} />
           </button>
         </div>
       </Container>

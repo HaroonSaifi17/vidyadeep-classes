@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { COURSES, type Course } from "../../content/site";
-import { ArrowIcon, CheckIcon } from "../ui/icons";
+import { ArrowIcon, CheckIcon, CloseIcon } from "../ui/icons";
 import { Container } from "../ui/Container";
 import { Reveal } from "../ui/Reveal";
 import { SectionHeader } from "../ui/SectionHeader";
@@ -142,9 +142,9 @@ export function SkillLab() {
                 type="button"
                 aria-label="Close course details modal"
                 onClick={() => setSelectedCourse(null)}
-                className="grid h-11 w-11 place-items-center rounded-full bg-paper text-ink-2 hover:bg-line hover:text-ink focus-visible:outline-2 focus-visible:outline-saffron"
+                className="grid h-11 w-11 place-items-center rounded-full bg-paper text-ink-2 transition-colors hover:bg-line hover:text-ink focus-visible:outline-2 focus-visible:outline-saffron"
               >
-                ✕
+                <CloseIcon size={20} />
               </button>
             </div>
 
