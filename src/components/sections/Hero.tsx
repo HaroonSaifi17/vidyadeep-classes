@@ -45,14 +45,14 @@ function HeroCopy() {
         </ButtonLink>
       </div>
 
-      <dl className="mt-12 grid grid-cols-2 gap-y-6 border-t border-line pt-6 sm:grid-cols-3">
+      <dl className="mt-12 grid grid-cols-3 divide-x divide-line border-t border-line pt-6">
         {HERO_META.map((item) => (
           <div
             key={item.label}
-            className="border-r border-line pr-7 last:border-none"
+            className="px-2.5 sm:px-6 first:pl-0 last:pr-0"
           >
-            <dt className="font-display text-xl">{item.value}</dt>
-            <dd className="mt-1 text-sm text-ink-2">{item.label}</dd>
+            <dt className="font-display text-lg sm:text-xl font-semibold">{item.value}</dt>
+            <dd className="mt-1 text-xs sm:text-sm text-ink-2 leading-tight">{item.label}</dd>
           </div>
         ))}
       </dl>
@@ -124,6 +124,8 @@ function Polaroid({
         src={src}
         alt={alt}
         loading={eager ? "eager" : "lazy"}
+        decoding="async"
+        fetchPriority={eager ? "high" : "auto"}
         className="block w-full rounded-lg"
       />
       <figcaption className="absolute inset-x-0 bottom-2.5 px-3 text-center font-display text-fine italic text-ink-2">
@@ -165,14 +167,14 @@ function HeroMedia() {
         caption="in session — real classroom"
         eager
         tapeClassName="left-8 -rotate-6"
-        className="left-0 top-0 w-4/5 sm:w-3/4 rotate-2 transition-transform duration-500 hover:rotate-0 hover:z-20"
+        className="left-0 top-0 w-4/5 sm:w-3/4 rotate-2 will-change-transform transition-transform duration-500 hover:rotate-0 hover:z-20"
       />
       <Polaroid
         src="/images/hero_study.webp"
         alt="A student focused on daily practice work"
         caption="daily practice hour"
         tapeClassName="right-6 rotate-6"
-        className="bottom-6 right-0 z-10 w-3/5 sm:w-1/2 -rotate-3 transition-transform duration-500 hover:rotate-0 hover:z-20"
+        className="bottom-6 right-0 z-10 w-3/5 sm:w-1/2 -rotate-3 will-change-transform transition-transform duration-500 hover:rotate-0 hover:z-20"
       />
       <FloatCard />
     </div>

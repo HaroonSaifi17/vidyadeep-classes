@@ -21,7 +21,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-line bg-paper/95">
       <Container className="flex items-center justify-between py-3.5">
         <Brand />
 

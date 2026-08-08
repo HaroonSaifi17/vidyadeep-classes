@@ -30,12 +30,14 @@ export function ExamPrep() {
               <Accordion
                 key={track.name}
                 heading={
-                  <span className="flex w-full items-center gap-5">
+                  <span className="flex flex-wrap items-center gap-2.5 sm:gap-5">
                     <span className="hidden font-display text-sm italic text-ink-2 sm:block">
                       {String(index + 1).padStart(2, "0")}
                     </span>
-                    <span className="font-display text-h3">{track.name}</span>
-                    <span className="rounded-full bg-saffron-soft px-3 py-1 text-label font-bold uppercase tracking-label text-saffron-ink">
+                    <span className="font-display text-xl sm:text-h3 leading-tight text-ink">
+                      {track.name.replace(" + ", "\u00a0+\u00a0")}
+                    </span>
+                    <span className="shrink-0 rounded-full bg-saffron-soft px-2.5 py-0.5 sm:px-3 sm:py-1 text-label font-bold uppercase tracking-label text-saffron-ink">
                       {track.tag}
                     </span>
                   </span>

@@ -22,9 +22,9 @@ export function Accordion({
         type="button"
         aria-expanded={open}
         onClick={() => setOpen((value) => !value)}
-        className="flex w-full items-center justify-between gap-4 px-2 py-5 text-left transition-colors hover:bg-hover"
+        className="flex w-full items-center justify-between gap-3 px-2 py-4 sm:py-5 text-left transition-colors hover:bg-hover focus-visible:outline-2 focus-visible:outline-saffron rounded-lg"
       >
-        <span className="flex-1">{heading}</span>
+        <span className="flex-1 min-w-0 pr-2">{heading}</span>
         <span
           className={`grid h-9 w-9 shrink-0 place-items-center rounded-full border border-line transition-all duration-300 ${
             open ? "rotate-45 border-ink bg-ink text-cream" : "text-ink-2"

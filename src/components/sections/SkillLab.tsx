@@ -14,13 +14,14 @@ function LabPhoto() {
           src="/images/computer_lab.webp"
           alt="Students at individual workstations in Vidyadeep computer lab"
           loading="lazy"
+          decoding="async"
           className="block h-56 w-full object-cover sm:h-64"
         />
         <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2">
-          <span className="truncate min-w-0 rounded-lg bg-ink/90 px-3 py-1.5 text-fine font-bold uppercase tracking-label text-cream shadow-sm backdrop-blur-md">
+          <span className="truncate min-w-0 rounded-lg bg-ink/95 px-3 py-1.5 text-fine font-bold uppercase tracking-label text-cream shadow-sm">
             Real Campus Computer Lab
           </span>
-          <span className="shrink-0 whitespace-nowrap rounded-lg bg-white/90 px-3 py-1.5 text-fine font-bold text-ink shadow-md backdrop-blur-md">
+          <span className="shrink-0 whitespace-nowrap rounded-lg bg-white/95 px-3 py-1.5 text-fine font-bold text-ink shadow-md">
             1:1 Workstations
           </span>
         </div>
@@ -75,21 +76,21 @@ export function SkillLab() {
                     setSelectedCourse(course);
                   }
                 }}
-                className="group grid cursor-pointer items-center gap-3 border-t border-line px-2 py-5 transition-all duration-300 hover:bg-paper-2 focus-visible:outline-2 focus-visible:outline-saffron sm:grid-cols-course sm:hover:px-5 rounded-lg"
+                className="group flex cursor-pointer items-center justify-between gap-3 border-t border-line px-3 py-4 transition-all duration-300 hover:bg-paper-2 focus-visible:outline-2 focus-visible:outline-saffron sm:grid sm:grid-cols-course sm:px-2 sm:py-5 sm:hover:px-5 rounded-lg"
               >
                 <span className="hidden font-display text-sm italic text-ink-2 sm:block">
                   {course.number}
                 </span>
-                <div>
-                  <p className="text-lg font-semibold tracking-tight text-ink group-hover:text-saffron">
+                <div className="min-w-0 flex-1">
+                  <p className="text-base sm:text-lg font-semibold tracking-tight text-ink group-hover:text-saffron">
                     {course.name}
                   </p>
-                  <p className="mt-0.5 text-sm text-ink-2">{course.details}</p>
+                  <p className="mt-0.5 text-sm text-ink-2 leading-snug">{course.details}</p>
                 </div>
                 <span className="hidden rounded-full border border-line px-3 py-1 text-label uppercase tracking-label text-ink-2 sm:inline-block">
                   Certificate
                 </span>
-                <ArrowIcon className="text-saffron opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                <ArrowIcon className="shrink-0 text-saffron opacity-60 transition-opacity duration-300 group-hover:opacity-100" />
               </div>
             </Reveal>
           ))}
@@ -106,7 +107,7 @@ export function SkillLab() {
           role="dialog"
           aria-modal="true"
           aria-labelledby="course-modal-title"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-ink/60 p-4 backdrop-blur-sm animate-fade-up"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-ink/70 p-4 animate-fade-up"
           onClick={() => setSelectedCourse(null)}
         >
           <div

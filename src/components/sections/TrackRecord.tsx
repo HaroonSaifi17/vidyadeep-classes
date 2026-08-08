@@ -19,7 +19,7 @@ function StatItem({ value, suffix, label, started, delay }: StatItemProps) {
   return (
     <div
       style={{ transitionDelay: `${delay}s` }}
-      className={`transition-all duration-700 ease-out ${
+      className={`transition-[opacity,transform] duration-700 ease-out ${
         started ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
       }`}
     >
@@ -102,8 +102,9 @@ export function TrackRecord() {
                   alt="Student awards and recognition ceremony at Vidyadeep Classes"
                   className="h-56 w-full rounded-lg object-cover sm:h-64"
                   loading="lazy"
+                  decoding="async"
                 />
-                <div className="absolute bottom-4 left-4 right-4 rounded-lg bg-ink/90 p-3 text-center backdrop-blur-md">
+                <div className="absolute bottom-4 left-4 right-4 rounded-lg bg-ink/95 p-3 text-center">
                   <p className="font-display text-sm text-gold">
                     Student Recognition &amp; Laptop/Tablet Awards
                   </p>

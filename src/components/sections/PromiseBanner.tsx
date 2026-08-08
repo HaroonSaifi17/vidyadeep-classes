@@ -12,6 +12,8 @@ export function PromiseBanner() {
                 <img
                   src="/images/mentor.webp"
                   alt="Faculty Mentor at Vidyadeep Classes"
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover"
                 />
               </div>

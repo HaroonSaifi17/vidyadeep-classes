@@ -73,17 +73,18 @@ function PhotoTile({
         src={photo.src}
         alt={photo.alt}
         loading="lazy"
-        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+        decoding="async"
+        className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-transparent opacity-80 transition-opacity duration-300 group-hover:opacity-95" />
-      <figcaption className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2.5">
-        <span className="truncate rounded-lg bg-ink/90 px-3 py-1.5 text-fine font-semibold uppercase tracking-label text-cream shadow-sm backdrop-blur-md">
+      <figcaption className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2">
+        <span className="min-w-0 truncate rounded-lg bg-ink/95 px-2.5 py-1.5 text-fine font-semibold uppercase tracking-label text-cream shadow-sm">
           {photo.caption}
         </span>
         <button
           type="button"
           tabIndex={-1}
-          className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg bg-white/90 px-3 py-1.5 text-fine font-bold text-ink shadow-md backdrop-blur-md transition-all duration-300 group-hover:bg-white group-hover:shadow-lg group-hover:scale-105"
+          className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg bg-white/95 px-2.5 py-1.5 text-fine font-bold text-ink shadow-md transition-all duration-300 group-hover:bg-white group-hover:shadow-lg group-hover:scale-105"
         >
           <MagnifyIcon
             size={14}
@@ -169,7 +170,7 @@ export function Campus() {
           role="dialog"
           aria-modal="true"
           aria-labelledby="lightbox-photo-title"
-          className="fixed inset-0 z-50 flex items-center justify-center bg-ink/80 p-4 backdrop-blur-md animate-fade-up"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-ink/90 p-4 animate-fade-up"
           onClick={() => setActivePhoto(null)}
         >
           <div
@@ -187,6 +188,7 @@ export function Campus() {
             <img
               src={activePhoto.src}
               alt={activePhoto.alt}
+              decoding="async"
               className="max-h-[75vh] w-full rounded-xl object-contain bg-ink"
             />
             <div className="p-4 text-center">
