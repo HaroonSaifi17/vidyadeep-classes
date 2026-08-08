@@ -84,13 +84,13 @@ function PhotoTile({
         <button
           type="button"
           tabIndex={-1}
-          className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg bg-white/95 px-2.5 py-1.5 text-fine font-bold text-ink shadow-md transition-all duration-300 group-hover:bg-white group-hover:shadow-lg group-hover:scale-105"
+          className="inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg bg-white/95 px-2 py-1.5 xs:px-2.5 text-fine font-bold text-ink shadow-md transition-all duration-300 group-hover:bg-white group-hover:shadow-lg group-hover:scale-105"
         >
           <MagnifyIcon
             size={14}
             className="shrink-0 transition-transform duration-300 group-hover:scale-110"
           />
-          <span>View Photo</span>
+          <span className="hidden xs:inline">View Photo</span>
         </button>
       </figcaption>
     </figure>

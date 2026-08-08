@@ -23,7 +23,7 @@ function StatItem({ value, suffix, label, started, delay }: StatItemProps) {
         started ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
       }`}
     >
-      <p className="font-display text-stat">
+      <p className="font-display text-[40px] xs:text-[48px] sm:text-stat font-bold leading-none">
         {count}
         <span className="text-gold">{suffix}</span>
       </p>

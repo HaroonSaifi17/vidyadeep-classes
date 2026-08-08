@@ -8,25 +8,37 @@ import { ButtonLink } from "../ui/Button";
 
 function LabPhoto() {
   return (
-    <div className="relative mt-8 w-full sm:w-5/6">
-      <div className="relative overflow-hidden rounded-xl border border-line bg-paper-2 shadow-md transition-transform duration-500 hover:scale-[1.02]">
+    <figure className="group relative mt-8 w-full sm:w-5/6 rounded-xl bg-white p-2.5 sm:p-3 pb-7 sm:pb-8 shadow-photo transition-all duration-500 hover:shadow-2xl hover:-rotate-1">
+      <span
+        aria-hidden
+        className="absolute -top-2.5 left-8 z-10 h-5 sm:h-6 w-14 sm:w-16 -rotate-6 bg-tape/90 shadow-sm rounded-[1px] pointer-events-none"
+      />
+      <div className="relative overflow-hidden rounded-lg">
         <img
           src="/images/computer_lab.webp"
           alt="Students at individual workstations in Vidyadeep computer lab"
           loading="lazy"
           decoding="async"
-          className="block h-56 w-full object-cover sm:h-64"
+          className="block h-52 sm:h-60 w-full object-cover rounded-lg transition-transform duration-500 ease-out group-hover:scale-105"
         />
-        <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2">
-          <span className="truncate min-w-0 rounded-lg bg-ink/95 px-3 py-1.5 text-fine font-bold uppercase tracking-label text-cream shadow-sm">
-            Real Campus Computer Lab
+        {/* Trust Sapphire Blue tint filter at rest, clearing smoothly on hover */}
+        <div
+          className="absolute inset-0 rounded-lg bg-saffron/20 mix-blend-multiply opacity-85 transition-opacity duration-500 group-hover:opacity-0 pointer-events-none"
+          aria-hidden="true"
+        />
+        <div className="absolute bottom-2.5 left-2.5 right-2.5 flex items-center justify-between gap-2 z-10">
+          <span className="truncate min-w-0 rounded-lg bg-ink/95 px-2.5 py-1 text-[11px] sm:text-fine font-bold uppercase tracking-label text-cream shadow-sm">
+            Real Campus Lab
           </span>
-          <span className="shrink-0 whitespace-nowrap rounded-lg bg-white/95 px-3 py-1.5 text-fine font-bold text-ink shadow-md">
+          <span className="shrink-0 whitespace-nowrap rounded-lg bg-white/95 px-2.5 py-1 text-[11px] sm:text-fine font-bold text-ink shadow-md">
             1:1 Workstations
           </span>
         </div>
       </div>
-    </div>
+      <figcaption className="absolute inset-x-0 bottom-2 sm:bottom-2.5 px-2 text-center font-display text-[11px] sm:text-fine italic text-ink-2 transition-colors duration-300 group-hover:text-saffron">
+        in session — computer training lab
+      </figcaption>
+    </figure>
   );
 }
 
