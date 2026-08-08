@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useScrollDirection } from "../../hooks/useScrollDirection";
 import { NAV_SECTIONS } from "../../content/site";
 import { ButtonLink } from "../ui/Button";
 import { ArrowIcon } from "../ui/icons";
@@ -19,9 +20,17 @@ function MenuIcon({ open }: { open: boolean }) {
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const isVisible = useScrollDirection();
+
+  // Keep header visible whenever the mobile menu is open
+  const isHeaderVisible = isVisible || open;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-paper/95">
+    <header
+      className={`sticky top-0 z-50 border-b border-line bg-paper/95 backdrop-blur transition-transform duration-300 ease-in-out ${
+        isHeaderVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <Container className="flex items-center justify-between py-3.5">
         <Brand />
 
